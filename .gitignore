@@ -1,0 +1,12 @@
+*.DS_STORE
+*.env
+*.log
+*.pxm
+*.idea
+*.vscode
+**/coverage
+
+**/node_modules/*
+
+npm-debug.log
+node_modules
