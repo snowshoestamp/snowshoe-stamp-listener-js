@@ -2,6 +2,11 @@
 
 A zero-dependency ES6 listener class for simple stamp detection.
 
+## Installation
+
+```bash
+npm install @snowshoe/stamp_listener --save
+```
 ## Usage
 
 ### Simple Stamp Detection
