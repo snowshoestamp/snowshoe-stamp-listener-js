@@ -34,7 +34,7 @@ const stampListener = new StampListener({
 
 ### Simple Stamp Detection with HTTP Client
 
-You can use whichever client you want, but this example uses Axios (as does the demo web page in **./demo**):
+You can use whichever client you want, but this example uses Axios:
 
 ```js
 import StampListener from '@snowshoe/stamp_listener';
