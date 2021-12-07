@@ -56,7 +56,7 @@ stampListener.listen((stampDataPoints, reEnableStampScreen) => {
             console.log(`Successfully verified stamp: ${response.data.stamp.serial}`);
         })
         .catch((error) => {
-            const httpStatusCode = error.response.status;
+            const httpStatusCode = error.response?.status;
             if (httpStatusCode === 401) {
                 console.log('The API key is most likely incorrect...', error.message);
             } else if (httpStatusCode === 400) {
