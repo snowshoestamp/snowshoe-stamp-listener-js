@@ -25,7 +25,7 @@ stampListener.listen((stampDataPoints, reEnableStampScreen) => {
 })
 ```
 
-### Stamp Listener Configuration Options
+### Listener Configuration Options
 
 ```js
 import StampListener from '@snowshoe/stamp_listener';
@@ -37,7 +37,7 @@ const stampListener = new StampListener({
 });
 ```
 
-### Simple Stamp Detection with HTTP Client
+### Use an HTTP Client to Authenticate Stamp Data
 
 You can use whichever client you want, but this example uses Axios:
 
