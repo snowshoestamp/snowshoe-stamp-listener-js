@@ -7,6 +7,7 @@ A zero-dependency ES6 listener class for simple stamp detection.
 ```bash
 npm install @snowshoe/stamp_listener --save
 ```
+
 ## Usage
 
 ### Simple Stamp Detection
@@ -49,13 +50,14 @@ import axios from 'axios';
 let httpClient = axios.create({
     baseURL: 'https://api.snowshoestamp.com',
     headers: {
-        post: {'SnowShoe-Api-Key': 'YOUR_SNOWSHOE_API_KEY'}
+        post: {'SnowShoe-Api-Key': 'YOUR_SNOWSHOE_API_KEY'} // You will receive a 401 response if this key isn't set.
     }
 });
 
 const stampListener = new StampListener();
 
 stampListener.listen((stampDataPoints, reEnableStampScreen) => {
+    // Send the stamp data points to the API... 
     httpClient.post('/v3/stamp', {
         data: stampDataPoints,
         // If you are passing the stamp data through your server first, this is a good place to add extra data.
