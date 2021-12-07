@@ -18,10 +18,12 @@ import StampListener from '@snowshoe/stamp_listener';
 const stampListener = new StampListener();
 
 stampListener.listen((stampDataPoints, reEnableStampScreen) => {
-    // stampDataPoints contains the array of data points. It can be passed to the stamp API in this format:
+    // "stampDataPoints" contains the array of data points,
+    // it can be passed to the stamp API in this format:
     const stampApiRequestPayload = {data: stampDataPoints};
 
-    // Renable the stamp screen when you're finished (a good place for this is the finally() call of an HTTP client):
+    // Renable the stamp screen when you're finished, 
+    // (a good place for this is the finally() call of an HTTP client):
     reEnableStampScreen();
 })
 ```
@@ -32,7 +34,7 @@ stampListener.listen((stampDataPoints, reEnableStampScreen) => {
 import StampListener from '@snowshoe/stamp_listener';
 
 const stampListener = new StampListener({
-    stampScreenElementId: 'stamp-screen',   // The ID of a specific element - by default the global "window" object is used.
+    stampScreenElementId: 'stamp-screen',   // The ID of a specific element - "window" object used by default.
     preventScrolling: true,                 // Disable scrolling - useful on mobile. 
     preventZooming: true,                   // Disable zooming - useful on mobile.
 });
@@ -50,7 +52,8 @@ import axios from 'axios';
 let httpClient = axios.create({
     baseURL: 'https://api.snowshoestamp.com',
     headers: {
-        post: {'SnowShoe-Api-Key': 'YOUR_SNOWSHOE_API_KEY'} // You will receive a 401 response if this key isn't set.
+        // You will receive a 401 response if this key isn't set...
+        post: {'SnowShoe-Api-Key': 'YOUR_SNOWSHOE_API_KEY'} 
     }
 });
 
@@ -60,7 +63,8 @@ stampListener.listen((stampDataPoints, reEnableStampScreen) => {
     // Send the stamp data points to the API... 
     httpClient.post('/v3/stamp', {
         data: stampDataPoints,
-        // If you are passing the stamp data through your server first, this is a good place to add extra data.
+        // If you are passing the stamp data through your server first, 
+        // this is a good place to add extra data.
     })
         .then(response => {
             console.log(`Successfully verified stamp: ${response.data.stamp.serial}`);
