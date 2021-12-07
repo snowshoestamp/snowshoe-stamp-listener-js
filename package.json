@@ -1,12 +1,20 @@
 {
   "name": "@snowshoe/stamp_listener",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "description": "",
+  "description": "A zero-dependency ES6 listener class for simple stamp detection.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "SnowShoe, Inc.",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowshoestamp/snowshoe-stamp-listener-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/snowshoestamp/snowshoe-stamp-listener-js/issues"
+  },
+  "homepage": "https://github.com/snowshoestamp/snowshoe-stamp-listener-js#readme"
 }
