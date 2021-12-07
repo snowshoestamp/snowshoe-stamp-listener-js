@@ -56,7 +56,10 @@ let httpClient = axios.create({
 const stampListener = new StampListener();
 
 stampListener.listen((stampDataPoints, reEnableStampScreen) => {
-    httpClient.post('/v3/stamp', {data: stampDataPoints})
+    httpClient.post('/v3/stamp', {
+        data: stampDataPoints,
+        // If you are passing the stamp data through your server first, this is a good place to add extra data.
+    })
         .then(response => {
             console.log(`Successfully verified stamp: ${response.data.stamp.serial}`);
         })
