@@ -1,6 +1,6 @@
 {
   "name": "@snowshoe/stamp_listener",
-  "version": "0.2.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A zero-dependency ES6 listener class for simple stamp detection.",
   "main": "index.js",
