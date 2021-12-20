@@ -31,7 +31,9 @@ class StampListener {
 
     listen(onStamp) {
         this.stampScreenElement.addEventListener('touchstart', event => {
-            const touches = Object.values(event.touches);
+            const touches = Object.values(event.touches).filter(touch => {
+                return typeof touch.pageX === 'number' && typeof touch.pageY === 'number';
+            });
             if (touches.length >= 5 && this.isScreenStampable) {
                 this.isScreenStampable = false;
                 const stampDataPoints = touches.map(touch => [touch.pageX, touch.pageY]);
